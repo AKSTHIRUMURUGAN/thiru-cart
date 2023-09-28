@@ -1,0 +1,27 @@
+{
+    "orderItems":[
+        {
+            "product":"6427122c6638679961d03e2b",
+            "name":"OPPO F21s Pro 5G",
+            "price":245.67,
+            "image":"product_123.jpg",
+            "quantity":1
+        }
+    ],
+    "itemPrice":2.75,
+    "taxPrice":0.14,
+    "shippingPrice":25,
+    "totalPrice":469.07,
+    "shippingInfo":{
+        "address":"417 raja street",
+        "city":"vellore",
+        "country":"india",
+        "postalCode":"631003",
+        "phoneNo":"9600338406"
+        
+    },
+    "paymentInfo":{
+        "id":"796yhghfgd6r",
+        "status":"success"
+    }
+}
