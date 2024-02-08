@@ -5,7 +5,7 @@ const path=require('path')
 const dotenv=require("dotenv");
 dotenv.config({path:path.join(__dirname,"config/config.env")})
 
-const server=app.listen(8000,()=>{console.log(`server listening to port ${process.env.PORT} in ${process.env.NODE_ENV}`)})
+const server=app.listen(process.env.PORT,()=>{console.log(`server listening to port ${process.env.PORT} in ${process.env.NODE_ENV}`)})
 process.on("unhandledRejection",(err)=>{
     console.log(`Error:${err}`)
     console.log("shutting down the server due to unhandle rejection")
