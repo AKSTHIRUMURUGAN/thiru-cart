@@ -34,8 +34,8 @@ router.route('/myprofile').get(isAuthenticatedUser,getUserProfile);
 router.route('/password/change').put(isAuthenticatedUser,changePassword);
 router.route('/update').put(isAuthenticatedUser,upload.single('avatar'),updateProfile);
 //admin
-router.route('/admin/users').get(isAuthenticatedUser,authorizeRole("admin"),getAllUsers);
-router.route('/admin/user/:id').get(isAuthenticatedUser,authorizeRole("admin"),getUser)
-                               .put(isAuthenticatedUser,authorizeRole("admin"),updateUser)
-                               .delete(isAuthenticatedUser,authorizeRole("admin"),deleteUser);
+router.route('/admin/users').get(authorizeRole("admin"),getAllUsers);
+router.route('/admin/user/:id').get(authorizeRole("admin"),getUser)
+                               .put(authorizeRole("admin"),updateUser)
+                               .delete(authorizeRole("admin"),deleteUser);
 module.exports=router;
