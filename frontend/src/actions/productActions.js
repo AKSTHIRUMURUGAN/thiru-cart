@@ -6,7 +6,7 @@ export const getProducts=(keyword,price,category,rating,currentPage)=>async(disp
    
    try {
     dispatch(productsRequest())
-    let link = `/api/v1/products?page=${currentPage}`
+    let link = `https://thiru-cart.onrender.com/api/v1/products?page=${currentPage}`
     if(keyword){
       link+=`&keyword=${keyword}`
     }
@@ -30,7 +30,7 @@ export const getProduct= id =>async(dispatch)=>{
    
    try {
     dispatch(productRequest())
-    const { data }=await axios.get(`/api/v1/product/${id}`)
+    const { data }=await axios.get(`https://thiru-cart.onrender.com/api/v1/product/${id}`)
     dispatch(productSuccess(data))
    } catch (error) {
     dispatch(productFail(error.response.data.message))
@@ -45,7 +45,7 @@ export const createReview= reviewData =>async(dispatch)=>{
       'Content-type': 'application/json'
     }
    }
-   const { data }=await axios.put(`/api/v1/review`,reviewData,config)
+   const { data }=await axios.put(`https://thiru-cart.onrender.com/api/v1/review`,reviewData,config)
    dispatch(createReviewSuccess(data))
   } catch (error) {
    dispatch(createReviewFail(error.response.data.message))
@@ -55,7 +55,7 @@ export const getAdminProducts=async(dispatch)=>{
    
   try {
    dispatch(adminProductsRequest())
-   const {data}=await axios.get(`/api/v1/admin/products`)
+   const {data}=await axios.get(`https://thiru-cart.onrender.com/api/v1/admin/products`)
    dispatch(adminProductsSuccess(data))
   } catch (error) {
    dispatch(adminProductsFail(error.response.data.message))
@@ -65,7 +65,7 @@ export const createNewProduct=productData=>async(dispatch)=>{
    
   try {
    dispatch(newProductRequest() )
-   const {data}=await axios.post(`/api/v1/admin/product/new`,productData)
+   const {data}=await axios.post(`https://thiru-cart.onrender.com/api/v1/admin/product/new`,productData)
    dispatch(newProductSuccess(data))
   } catch (error) {
    dispatch(newProductFail(error.response.data.message))
@@ -75,7 +75,7 @@ export const deleteProduct=id=>async(dispatch)=>{
    
   try {
    dispatch(deleteProductRequest() )
-   await axios.delete(`/api/v1/admin/product/${id}`)
+   await axios.delete(`https://thiru-cart.onrender.com/api/v1/admin/product/${id}`)
    dispatch(deleteProductSuccess())
   } catch (error) {
    dispatch(deleteProductFail(error.response.data.message))
@@ -86,7 +86,7 @@ export const updateProduct=(id,productData)=>async(dispatch)=>{
   try {
     console.log(productData)
    dispatch(updateProductRequest())
-   const {data}=await axios.put(`/api/v1/admin/product/${id}`,productData)
+   const {data}=await axios.put(`https://thiru-cart.onrender.com/api/v1/admin/product/${id}`,productData)
    dispatch(updateProductSuccess(data))
   } catch (error) {
    dispatch(updateProductFail(error.response.data.message))
